@@ -4,7 +4,7 @@ import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 export default function App() {
   const [modalIsVisible, setModalIsVisible] = React.useState(false);
-  const [courseGoals, setCourseGoals] = React.useState([]);
+  const [courseGoals, setCourseGoals]: any[] = React.useState([]);
 
   function startAddGoalHandler() {
     setModalIsVisible(true);
@@ -14,13 +14,13 @@ export default function App() {
     setModalIsVisible(false);
   }
 
-  function deleteGoalHandler(id) {
-    setCourseGoals(currentCourseGoals => {
+  function deleteGoalHandler(id: string) {
+    setCourseGoals((currentCourseGoals: any[]) => {
       return currentCourseGoals.filter(goal => goal.id !== id);
     });
   }
-  function addGoalHandler(enteredGoalText) {
-    setCourseGoals(currentCourseGoals => [
+  function addGoalHandler(enteredGoalText: string): any {
+    setCourseGoals((currentCourseGoals: any) => [
       ...currentCourseGoals,
       {text: enteredGoalText, id: Math.random().toString()},
     ]);
@@ -51,7 +51,7 @@ export default function App() {
               />
             );
           }}
-          keyExtractor={(item, index) => {
+          keyExtractor={item => {
             return item.id;
           }}
         />

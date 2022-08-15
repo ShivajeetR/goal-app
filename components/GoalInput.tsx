@@ -2,13 +2,13 @@ import {StyleSheet, View, Button, TextInput, Modal} from 'react-native';
 import React from 'react';
 function GoalInput(props: any) {
   // function inside the component
-  const [enteredGoalText, setEnteredGoalText] = React.useState('');
+  const [enteredGoalText, setEnteredGoalText] = React.useState<string>('');
   function goalInputHandler(text: string) {
     setEnteredGoalText(text);
   }
 
   // a way to add data in a parent function
-  function addGoalHandler() {
+  function addGoalHandler(): void {
     props.onAddGoal(enteredGoalText);
     setEnteredGoalText('');
   }

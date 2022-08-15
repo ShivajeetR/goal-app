@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  StatusBar,
-  StyleSheet,
-  TextInput,
-  View,
-  Button,
-  FlatList,
-} from 'react-native';
+import {StyleSheet, View, Button, FlatList} from 'react-native';
 import GoalItem from './components/GoalItem.js';
 import GoalInput from './components/GoalInput.js';
 export default function App() {

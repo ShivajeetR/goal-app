@@ -4,7 +4,9 @@ import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 export default function App() {
   const [modalIsVisible, setModalIsVisible] = React.useState<boolean>(false);
-  const [courseGoals, setCourseGoals] = React.useState<string[]>([]);
+  const [courseGoals, setCourseGoals] = React.useState<
+    {text: string; id: string}[]
+  >([]);
 
   function startAddGoalHandler() {
     setModalIsVisible(true);

@@ -8,20 +8,20 @@ export default function App() {
     {text: string; id: string}[]
   >([]);
 
-  function startAddGoalHandler() {
+  function startAddGoalHandler(): void {
     setModalIsVisible(true);
   }
 
-  function endAddGoalHandler() {
+  function endAddGoalHandler(): void {
     setModalIsVisible(false);
   }
 
-  function deleteGoalHandler(id: string) {
+  function deleteGoalHandler(id: string): void {
     setCourseGoals((currentCourseGoals: {text: string; id: string}[]) => {
       return currentCourseGoals.filter(goal => goal.id !== id);
     });
   }
-  function addGoalHandler(enteredGoalText: {text: string; id: string}): any {
+  function addGoalHandler(enteredGoalText: {text: string; id: string}): void {
     setCourseGoals((currentCourseGoals: any) => [
       ...currentCourseGoals,
       {text: enteredGoalText, id: Math.random().toString()},

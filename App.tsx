@@ -17,11 +17,11 @@ export default function App() {
   }
 
   function deleteGoalHandler(id: string) {
-    setCourseGoals((currentCourseGoals: any[]) => {
+    setCourseGoals((currentCourseGoals: {text: string; id: string}[]) => {
       return currentCourseGoals.filter(goal => goal.id !== id);
     });
   }
-  function addGoalHandler(enteredGoalText: string): any {
+  function addGoalHandler(enteredGoalText: {text: string; id: string}): any {
     setCourseGoals((currentCourseGoals: any) => [
       ...currentCourseGoals,
       {text: enteredGoalText, id: Math.random().toString()},

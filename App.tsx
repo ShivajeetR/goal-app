@@ -3,8 +3,8 @@ import {StyleSheet, View, Button, FlatList} from 'react-native';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 export default function App() {
-  const [modalIsVisible, setModalIsVisible]: any[] = React.useState(false);
-  const [courseGoals, setCourseGoals]: any[] = React.useState([]);
+  const [modalIsVisible, setModalIsVisible] = React.useState<boolean>(false);
+  const [courseGoals, setCourseGoals] = React.useState<string[]>([]);
 
   function startAddGoalHandler() {
     setModalIsVisible(true);
